@@ -31,9 +31,14 @@ impl<'a> Display for Address<'a> {
     }
 }
 
-/// Programa para hacer ping
+/// Utilidad para hacer ping a una IP, hotel o a una red, pudiendo seleccionar el rango de IP.
 #[derive(Parser, Debug)]
-#[command(author = "Antonio Garcés", version, about, long_about = None)]
+#[command(name = "PingPC")]
+#[command(author = "Antonio Garcés")]
+#[command(
+    help_template = "{about-section} \n {usage-heading} {usage} \n {all-args} {tab} \n\n Autor: {author-with-newline}"
+)]
+#[command(about, long_about)]
 pub struct Args {
     /// Rango de IP (Ej. 1-255)
     #[arg(short, long)]
